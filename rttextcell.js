@@ -1,17 +1,27 @@
-let TextCell = require('./textcell.js');
+"use strict";
+
+var TextCell = require('./textcell.js').TextCell;
 // RTextCell
 
-function RTextCell(text) {
-  TextCell.call(this, text);
+class RTextCell extends TextCell {
+  constructor(text) {
+      super(text);
+
 }
-RTextCell.prototype = Object.create(TextCell.prototype);
-RTextCell.prototype.draw = function(width, height) {
-  var result = [];
-  for (var i = 0; i < height; i++) {
-    var line = this.text[i] || "";
-    result.push(" ".repeat(width - line.length) + line);
+
+  draw(width, height) {
+    let result = [];
+      for (let i = 0; i < height; i++){
+        let line = this.text[i] || "";
+        result.push(" ".repeat(width - line.length) + line);
+      }
+      return result;
+
   }
-  return result;
-};
+
+}
 // End RTextCell
-module.exports = RTextCell;
+
+module.exports = {
+  RTextCell:RTextCell
+}

@@ -1,6 +1,7 @@
-let UnderlinedCell = require('./underlinedcell.js');
-let RTextCell = require('./rttextcell.js');
-let TextCell = require('./textcell.js');
+"use strict";
+let UnderlinedCell = require('./underlinedcell.js').UnderlinedCell;
+let RTextCell = require('./rttextcell.js').RTextCell;
+let TextCell = require('./textcell.js').TextCell;
 // Utils: Monkey Patching
 String.prototype.repeat = function(times) {
   var result = "";
